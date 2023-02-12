@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+set(CMAKE_C_COMPILER "gcc")
+set(CMAKE_CXX_COMPILER "g++")
+project(PE)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_VERBOSE_MAKEFILE OFF)
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/output)
+
+include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/core)
+include_directories(${PROJECT_SOURCE_DIR}/kernel)
+include_directories(${PROJECT_SOURCE_DIR}/architecture)
+include_directories(${PROJECT_SOURCE_DIR}/project)
+include_directories(${PROJECT_SOURCE_DIR}/platform/windows)
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/core)
+add_subdirectory(${PROJECT_SOURCE_DIR}/kernel)
+add_subdirectory(${PROJECT_SOURCE_DIR}/architecture)
+add_subdirectory(${PROJECT_SOURCE_DIR}/platform/windows)
+add_subdirectory(${PROJECT_SOURCE_DIR}/project)
